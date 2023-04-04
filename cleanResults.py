@@ -10,7 +10,7 @@ def cleanResults():
     worksheet = workbook.active
     worksheet.delete_rows(1, worksheet.max_row)
 
-    rows = [['SCENARIO', 'API', 'DATA_SIZE', 'TIME']]
+    rows = [['Scenariusz', 'Interfejs', 'Ilośc wierszy w tabeli', 'Czas [s]']]
     for row in rows:
         worksheet.append(row)
 

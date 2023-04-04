@@ -4,11 +4,13 @@ from soapAPI import soapAPIScenario
 from cleanResults import cleanResults
 cleanResults()
 
-
+iteration = 0
 for i in range(10):
-    SIZES = [100, 1000, 10000]
+    SIZES = [500000, 1000, 10000, 100]
 
     for SIZE in SIZES:
+        iteration = iteration + 1
+        print('ITERATION: ' + str(iteration))
 
         graphql_query = """
         query table($cursor: String) {

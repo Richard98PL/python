@@ -14,7 +14,7 @@ def graphQLScenario(SCENARIO, DATA_SIZE, graphql_query):
       credentials = json.load(f)
 
   # Define authentication endpoint
-  auth_url = 'https://test.salesforce.com/services/oauth2/token'
+  auth_url = 'https://' + credentials['tokenInstance'] + '.salesforce.com/services/oauth2/token'
 
   # Define authentication parameters
   params = {

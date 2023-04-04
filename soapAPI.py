@@ -17,7 +17,7 @@ def soapAPIScenario(SCENARIO, DATA_SIZE, query_string):
         credentials = json.load(f)
 
     # Define authentication endpoint
-    auth_url = 'https://test.salesforce.com/services/oauth2/token'
+    auth_url = 'https://' + credentials['tokenInstance'] + '.salesforce.com/services/oauth2/token'
 
     # Define authentication parameters
     params = {
@@ -105,7 +105,7 @@ def soapAPIScenario(SCENARIO, DATA_SIZE, query_string):
 
         elif 'queryMoreResponse' in json_str['soapenv:Envelope']['soapenv:Body'] :
             query_locator = json_str['soapenv:Envelope']['soapenv:Body']['queryMoreResponse']['result']['queryLocator']
-            
+
         else:
             break
 
